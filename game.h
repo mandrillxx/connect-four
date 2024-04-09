@@ -9,12 +9,19 @@ using namespace std;
 
 class Player;
 class Board;
+class Game;
 
 const int ROWS = 6;
 const int COLUMNS = 7;
 
 // Enable to show direction win was calculated from
 const bool DEBUG = false;
+
+class Game
+{
+public:
+	void playGame();
+};
 
 class Board
 {
