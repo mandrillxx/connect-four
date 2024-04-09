@@ -7,9 +7,9 @@ using namespace std;
 int main()
 {
     // Initialize board & player classes
-    Game::Board board;
-    Game::Player player1(board, 'R');
-    Game::Player player2(board, 'B');
+    Board board;
+    Player player1(board, 'R');
+    Player player2(board, 'B');
 
     board.displayBoard();
 
@@ -55,7 +55,7 @@ int main()
         }
 
         // Attempt to play column
-        Game::Player &goingPlayer = going == player1.piece ? player1 : player2;
+        Player &goingPlayer = going == player1.piece ? player1 : player2;
         bool success = board.playColumn(goingPlayer, column - 1);
         if (!success)
         {

@@ -16,30 +16,28 @@ const int COLUMNS = 7;
 // Enable to show direction win was calculated from
 const bool DEBUG = false;
 
-namespace Game
+class Board
 {
-	class Board
-	{
-	public:
-		Board();
-		void displayBoard();
-		bool playColumn(Player &player, int column);
-		bool checkWin(char piece);
-		bool boardFull();
+public:
+	Board();
+	void displayBoard();
+	bool playColumn(Player &player, int column);
+	bool checkWin(char piece);
+	bool boardFull();
 
-	private:
-		char grid[ROWS][COLUMNS];
-	};
+private:
+	char grid[ROWS][COLUMNS];
+};
 
-	class Player
-	{
-	public:
-		Player(Board &board, char piece);
-		bool playColumn(int column);
-		char piece;
+class Player
+{
+public:
+	Player(Board &board, char piece);
+	bool playColumn(int column);
+	char piece;
 
-	private:
-		Board &board;
-	};
+private:
+	Board &board;
+};
+
 #endif
-}

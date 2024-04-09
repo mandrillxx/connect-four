@@ -4,7 +4,7 @@
 
 using namespace std;
 
-Game::Board::Board()
+Board::Board()
 {
 	for (int x = 0; x < ROWS; x++)
 	{
@@ -15,7 +15,7 @@ Game::Board::Board()
 	}
 }
 
-void Game::Board::displayBoard()
+void Board::displayBoard()
 {
 	cout << "| [1] | [2] | [3] | [4] | [5] | [6] | [7] |" << endl;
 	cout << "|-----------------------------------------|" << endl;
@@ -31,7 +31,7 @@ void Game::Board::displayBoard()
 	cout << "|-----------------------------------------|" << endl;
 }
 
-bool Game::Board::boardFull()
+bool Board::boardFull()
 {
 	for (int x = 0; x < ROWS; x++)
 	{
@@ -46,7 +46,7 @@ bool Game::Board::boardFull()
 	return true;
 }
 
-bool Game::Board::playColumn(Player &player, int column)
+bool Board::playColumn(Player &player, int column)
 {
 	for (int i = ROWS - 1; i >= 0; i--)
 	{
@@ -59,7 +59,7 @@ bool Game::Board::playColumn(Player &player, int column)
 	return false; // Column is full
 }
 
-bool Game::Board::checkWin(char piece)
+bool Board::checkWin(char piece)
 {
 	// Check for horizontal wins
 	for (int row = 0; row < ROWS; row++)
