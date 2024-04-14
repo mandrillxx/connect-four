@@ -8,6 +8,7 @@
 using namespace std;
 
 class Player;
+class Test;
 class Board;
 class Game;
 
@@ -16,11 +17,23 @@ const int COLUMNS = 7;
 
 // Enable to show direction win was calculated from
 const bool DEBUG = false;
+// Enable to run tests on winning directions
+const bool RUN_TESTS = false;
+
+class Test
+{
+public:
+	bool testHorizontalWin();
+	bool testVerticalWin();
+	bool testDiagonalLWin();
+	bool testDiagonalRWin();
+};
 
 class Game
 {
 public:
 	void playGame();
+	void runTests();
 };
 
 class Board

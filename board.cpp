@@ -17,8 +17,19 @@ Board::Board()
 
 void Board::displayBoard()
 {
-	cout << "| [1] | [2] | [3] | [4] | [5] | [6] | [7] |" << endl;
-	cout << "|-----------------------------------------|" << endl;
+	cout << "|";
+	for (int i = 0; i < COLUMNS; i++)
+	{
+		cout << " [" << i + 1 << "] |";
+	}
+	cout << endl;
+
+	cout << "|";
+	for (int i = 0; i < COLUMNS * 5.8; i++)
+	{
+		cout << "-";
+	}
+	cout << "|" << endl;
 	for (int x = 0; x < ROWS; x++)
 	{
 		cout << "|";
@@ -28,7 +39,12 @@ void Board::displayBoard()
 		}
 		cout << endl;
 	}
-	cout << "|-----------------------------------------|" << endl;
+	cout << "|";
+	for (int i = 0; i < COLUMNS * 5.8; i++)
+	{
+		cout << "-";
+	}
+	cout << "|" << endl;
 }
 
 bool Board::boardFull()

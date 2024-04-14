@@ -32,7 +32,7 @@ void Game::playGame()
             return;
         }
 
-        cout << (going == player1.piece ? "Player 1" : "Player 2") << " (" << going << ") Select column [1-7], 'q' to quit: ";
+        cout << (going == player1.piece ? "Player 1" : "Player 2") << " (" << going << ") Select column [1-" << COLUMNS << "], 'q' to quit: ";
         char input;
         cin >> input;
         if (input == 'q')
@@ -67,4 +67,18 @@ void Game::playGame()
         // Alternate turns
         going = going == player1.piece ? player2.piece : player1.piece;
     }
+}
+
+void Game::runTests()
+{
+    Test test;
+    bool horizontalSuccess = test.testHorizontalWin();
+    bool verticalSuccess = test.testVerticalWin();
+    bool leftDiagonalSuccess = test.testDiagonalLWin();
+    bool rightDiagonalSuccess = test.testDiagonalRWin();
+
+    cout << "Horizontal Win Test: " << (horizontalSuccess ? "PASSED" : "FAILED") << endl;
+    cout << "Vertical Win Test: " << (verticalSuccess ? "PASSED" : "FAILED") << endl;
+    cout << "Left Diagonal Win Test: " << (leftDiagonalSuccess ? "PASSED" : "FAILED") << endl;
+    cout << "Right Diagonal Win Test: " << (rightDiagonalSuccess ? "PASSED" : "FAILED") << endl;
 }
